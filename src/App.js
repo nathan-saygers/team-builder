@@ -1,7 +1,15 @@
 import React, {useState} from 'react';
-import MemberCard from './components/MemberCard'
-import MemberForm from './components/MemberForm'
+import MemberCard from './components/MemberCard';
+import MemberForm from './components/MemberForm';
+import styled from 'styled-components';
 import './App.css';
+
+const AppWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+`
 
 function App() {
   const [members, setMembers] = useState([
@@ -22,12 +30,11 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Oh shit, there's the team</h1>
-      <MemberCard members={members} />
-      <h1>Oh shit, add even more team</h1>
+    <AppWrapper>
+      <h1>Oh shit, there's the team:</h1>
       <MemberForm addNewTeamMember={addNewTeamMember} />
-    </div>
+      <MemberCard members={members} />
+    </AppWrapper>
   );
 }
 
