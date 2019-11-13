@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
 import MemberCard from './components/MemberCard'
+import MemberForm from './components/MemberForm'
 import './App.css';
 
 function App() {
@@ -14,8 +14,10 @@ function App() {
 
   return (
     <div>
-      <h1>hello, World</h1>
+      <h1>Oh shit, there's the team</h1>
       <MemberCard members={members} />
+      <h1>Oh shit, add even more team</h1>
+      <MemberForm />
     </div>
   );
 }
