@@ -9,7 +9,7 @@ const formWrapper = styled.div`
 `
 
 const MemberForm = props => {
-  const [newMember, setNewMember] = useState({name: "", position: ""})
+  const [newMember, setNewMember] = useState({name: "", email: "", position: ""})
 
   const handleChanges = event => {
     setNewMember({...newMember, [event.target.name]: event.target.value})
@@ -18,7 +18,7 @@ const MemberForm = props => {
   const submitForm = event => {
     event.preventDefault()
     props.addNewTeamMember(newMember)
-    setNewMember({name: "", position: ""})
+    setNewMember({name: "", email: "", position: ""})
   }
 
   return (
@@ -26,6 +26,8 @@ const MemberForm = props => {
       <form onSubmit={submitForm}>
         <label htmlFor="name">Name: </label>
         <input type="text" id="name" name="name" onChange={handleChanges} value={newMember.name} />
+        <label htmlFor="email">Email: </label>
+        <input type="email" id="email" name="email" onChange={handleChanges} value={newMember.email}/>
         <label htmlFor="position">Position: </label>
         <input type="text" id="position" name="position" onChange={handleChanges} value={newMember.position}/>
         <button type="submit">Create New Member</button>

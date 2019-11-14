@@ -16,7 +16,8 @@ function App() {
     {
       id: 1,
       name: "Team Member 1",
-      position: "The Main Guy"
+      position: "The Main Guy",
+      email: "dude@duder.com"
     }
   ]);
 
@@ -24,14 +25,15 @@ function App() {
     const nextMember = {
       id: Date.now(),
       name: member.name,
-      position: member.position
+      position: member.position,
+      email: member.email
     };
     setMembers([...members, nextMember])
   }
 
   return (
     <AppWrapper>
-      <h1>Oh shit, there's the team:</h1>
+      <h1>Aw shucks, there's the team:</h1>
       <MemberForm addNewTeamMember={addNewTeamMember} />
       <MemberCard members={members} />
     </AppWrapper>

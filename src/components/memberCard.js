@@ -25,6 +25,7 @@ const MemberCard = props => {
       {props.members.map(teammate => (
       <MembCard key={teammate.id}>
         <h2>{`Name: ${teammate.name}`}</h2>
+        <p>{`Email: ${teammate.email}`}</p>
         <p>{`Position: ${teammate.position}`}</p>
       </MembCard>
     ))}
